@@ -109,7 +109,7 @@ const Dashboard: React.FC = () => {
         // Fetch user's calorie goal
         try {
           const response = await axios.get(
-            "http://localhost:5000/api/get-calorie-goal",
+            "https://back-all-in-one.onrender.com/api/get-calorie-goal",
             {
               params: { email },
             }
@@ -130,7 +130,7 @@ const Dashboard: React.FC = () => {
     if (!userEmail || !date) return;
     try {
       const response = await axios.get<FoodsResponse>(
-        "http://localhost:5000/api/foods/user",
+        "https://back-all-in-one.onrender.com/api/foods/user",
         {
           params: { email: userEmail, date: date },
         }
@@ -164,7 +164,7 @@ const Dashboard: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/set-calorie-goal",
+        "https://back-all-in-one.onrender.com/api/set-calorie-goal",
         {
           email: userEmail,
           calorieGoal: goal,
@@ -216,7 +216,7 @@ const Dashboard: React.FC = () => {
     if (result.isConfirmed) {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/set-calorie-goal",
+          "https://back-all-in-one.onrender.com/api/set-calorie-goal",
           {
             email: userEmail,
             calorieGoal: 0,
